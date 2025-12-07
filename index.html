@@ -353,5 +353,31 @@ Have fun creating your portfolio on this template!!! -->
 
     <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
 
+    <script>
+  const toggleButton = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // 1. On Load: Check LocalStorage & Apply Theme
+  // If the user previously chose 'dark', apply it immediately.
+  const currentTheme = localStorage.getItem('theme');
+  if (currentTheme === 'dark') {
+    body.classList.add('dark-mode');
+    toggleButton.innerText = '☀️'; // Change icon to Sun
+  }
+
+  // 2. On Click: Toggle Theme & Save Preference
+  toggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    if (body.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark'); // Save to memory
+      toggleButton.innerText = '☀️';
+    } else {
+      localStorage.setItem('theme', 'light'); // Save to memory
+      toggleButton.innerText = '🌙';
+    }
+  });
+</script>
+
   </body>
 </html>
