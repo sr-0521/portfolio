@@ -13,3 +13,51 @@ $dark-blue-text: #272341; // For headings
 $default-font-size: 1.6rem;
 $mid-font-size: 2.5rem;
 $big-font-size: 4rem;
+
+// 1. RAW PALETTE (Static Hex Codes)
+// We keep these so you have a reference, but we won't use them directly in layouts.
+$hex-primary: #108dc7;
+$hex-secondary: #ef8e38;
+$hex-light-white: #e5e5e5;
+$hex-white: #ffffff;
+$hex-dark-grey: #333333;
+$hex-dark-blue-text: #272341;
+$hex-black-bg: #121212; // Added for Dark Mode background
+
+// FONT FAMILY
+$font-family: "Montserrat", sans-serif;
+
+// FONT SIZES (These stay static)
+$default-font-size: 1.6rem;
+$mid-font-size: 2.5rem;
+$big-font-size: 4rem;
+
+// 2. THEME CONFIGURATION (The Magic Part)
+// We define standard names like --bg-color that swap values based on the class.
+
+:root {
+  /* LIGHT MODE (Default) */
+  --primary-color: #{$hex-primary};
+  --secondary-color: #{$hex-secondary};
+  
+  --bg-color: #{$hex-white};
+  --card-bg: #{$hex-light-white};
+  
+  --text-main: #{$hex-dark-grey};
+  --text-heading: #{$hex-dark-blue-text};
+}
+
+.dark-mode {
+  /* DARK MODE OVERRIDES */
+  /* We keep primary/secondary the same, or you can tweak them to pop more */
+  --primary-color: #{$hex-primary}; 
+  --secondary-color: #{$hex-secondary};
+  
+  /* Swap backgrounds to dark */
+  --bg-color: #{$hex-black-bg};     
+  --card-bg: #1e1e1e;               
+  
+  /* Swap text to light */
+  --text-main: #e0e0e0;             
+  --text-heading: #{$hex-white};    
+}

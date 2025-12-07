@@ -11,4 +11,41 @@ html {
 body {
   text-align: center;
   line-height: 1.5;
+  /* 1. Connect to the variables */
+  background-color: var(--bg-color);
+  color: var(--text-main);
+
+  /* 2. Add the smooth transition */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+  /* --- Floating Dark Mode Button --- */
+#theme-toggle {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  z-index: 1000;
+  
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  
+  /* Uses your variables */
+  background-color: var(--card-bg); 
+  border: 1px solid var(--text-main);
+  color: var(--text-main);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+
