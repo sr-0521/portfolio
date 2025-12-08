@@ -22,7 +22,7 @@ $hex-light-white: #e5e5e5;
 $hex-white: #ffffff;
 $hex-dark-grey: #333333;
 $hex-dark-blue-text: #272341;
-$hex-black-bg: #121212; // Added for Dark Mode background
+$hex-black-bg: #0f172a; // Added for Dark Mode background
 
 // FONT FAMILY
 $font-family: "Montserrat", sans-serif;
@@ -55,7 +55,7 @@ $big-font-size: 4rem;
   
   /* Swap backgrounds to dark */
   --bg-color: #{$hex-black-bg};     
-  --card-bg: #1e1e1e;               
+  --card-bg: #1e293b;               
   
   /* Swap text to light */
   --text-main: #e0e0e0;             

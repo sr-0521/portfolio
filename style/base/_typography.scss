@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
-h1 {
+
+/* 1. Generic Headings: Use the dynamic variable */
+h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
+  color: var(--text-heading);
 }
 
 p,
@@ -26,12 +29,16 @@ a:hover {
 }
 
 .dark-blue-color {
-  color: $dark-blue-text;
+  color: var(--text-heading);
 }
 
+/* 2. The Color Override Fix */
 .text-color-main {
   margin-left: 1rem;
   @include supportColorForIE11();
+
+  /* Default (Light Mode): Forces the secondary color */
+  -webkit-text-fill-color: $secondary-color; 
 
   @include respond(phone) {
     margin: 0;

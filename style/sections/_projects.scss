@@ -1,8 +1,9 @@
 #projects {
-  background-color: $light-white;
-  color: $dark-blue-text;
+  background-color: var(--bg-color);
+  color: var(--text-main);
   margin-top: -15rem;
   padding-top: 15rem;
+  
   @include respond(tab-land) {
     margin-top: 0;
     padding-top: 5rem;
@@ -10,11 +11,13 @@
   @include respond(phone) {
     padding-bottom: 1px;
   }
+  
   .project-wrapper {
     margin-bottom: 15rem;
     @include respond(phone) {
       margin-bottom: 0rem;
     }
+    
     .row {
       margin: 0;
       margin-bottom: 8rem;
@@ -22,6 +25,7 @@
         margin-bottom: 4rem;
       }
     }
+    
     &__text {
       width: 100%;
       text-align: left;
@@ -31,10 +35,14 @@
       @include respond(phone) {
         margin-bottom: 2.5rem;
       }
+      
       &-title {
         font-weight: bold;
         margin-bottom: 1.8rem;
         font-size: $mid-font-size;
+        
+        /* ✅ FIX 1: Force the Title Color */
+        color: var(--text-heading); 
 
         @include respond(phone) {
           font-size: 2rem;
@@ -43,6 +51,9 @@
 
       &-info {
         margin-bottom: 1.5rem;
+        
+        /* ✅ FIX 2: Force the Paragraph Color */
+        color: var(--text-main);
       }
 
       &-btns {
@@ -63,6 +74,10 @@
       }
       & .thumbnail {
         border: none;
+        
+        /* ⚠️ CAUTION: This shadow has a hardcoded #ffffff glow */
+        /* It will look like a white box in Dark Mode. */
+        /* I recommend using 'transparent' or a variable here eventually. */
         box-shadow: 8px 8px 9px 7px rgba(174, 174, 192, 0.4),
           -5px -5px 15px 7px #ffffff;
 
@@ -77,6 +92,12 @@
           border: 1px solid #d2d2d2;
           margin-bottom: 3.2rem;
           transform: none;
+        }
+        
+        /* ✅ FIX 3: Remove the white shadow in Dark Mode */
+        .dark-mode & {
+           box-shadow: none; 
+           border: 1px solid var(--text-main); /* Optional border instead */
         }
       }
     }
