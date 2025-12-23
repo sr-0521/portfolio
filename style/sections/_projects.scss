@@ -102,4 +102,41 @@
       }
     }
   }
+  .project-completion {
+          margin: 1.5rem 0 2rem 0;
+        }
+
+  .completion-label {
+    display: block;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #666;
+    font-weight: 500;
+  }
+
+  .completion-bar {
+    width: 100%;
+    height: 6px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .completion-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    width: 0%;
+    transition: width 1.5s ease-out;
+    border-radius: 10px;
+  }
+  /* Dark mode support */
+  .dark-mode & {
+    .completion-label {
+      color: #ccc;
+    }
+    
+    .completion-bar {
+      background-color: #444;
+    }
+  }
 }

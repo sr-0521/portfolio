@@ -168,6 +168,12 @@ Have fun creating your portfolio on this template!!! -->
               <p class="project-wrapper__text-info">
                 A mobile app that helps students find clubs and events on campus.
               </p>
+              <div class="project-completion">
+                <span class="completion-label">Project Status: <strong style="font-size: 1.5rem; color: #667eea;">75%</strong></span>
+                <div class="completion-bar">
+                  <div class="completion-fill" data-completion="100"></div>
+                </div>
+              </div>
               <div class="project-wrapper__text-btns">
                 <a
                   href="#"
@@ -419,5 +425,18 @@ AOS.init({
   offset: 100,    /* Start animation 100px before the element is visible */
 });
 </script>
+<script>
+    // Animate progress bars on page load
+    window.addEventListener('load', () => {
+      const progressBars = document.querySelectorAll('.completion-fill');
+      
+      progressBars.forEach(bar => {
+        const completion = bar.getAttribute('data-completion');
+        setTimeout(() => {
+          bar.style.width = completion + '%';
+        }, 300);
+      });
+    });
+  </script>
   </body>
 </html>
